@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="ptbr">
 <head>
-    <!-- Configurações iniciais da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Produções - Sobre Mim</title>
-
-    <!-- Importação da fonte Quicksand -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Estilos globais -->
     <style>
         body {
             margin: 0;
             overflow: hidden;
-            background-image: url('about.png');
-            background-size: cover;
+            background: url('about.png') center/cover no-repeat;
             color: rgba(255, 255, 255, 0.8);
-            font-family: 'Quicksand', sans-serif; /* Uso da fonte Quicksand para o texto */
+            font-family: 'Quicksand', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         nav {
@@ -30,7 +24,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
             padding: 10px;
             box-sizing: border-box;
             z-index: 2;
@@ -43,63 +37,57 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
-            font-family: 'Quicksand', sans-serif; /* Uso da fonte Quicksand para o texto */
+            font-size: 1em;
+            font-family: 'Quicksand', sans-serif;
         }
 
-        /* Estilos da seção Sobre Mim */
         .sobre-mim-section {
-            padding: 20px;
+            padding: 10px;
             text-align: center;
-            opacity: 0; /* Inicia completamente transparente */
+            opacity: 0;
             position: relative;
             z-index: 1;
             box-sizing: border-box;
-            max-width: 800px;
-            background-color: rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 800px; /* Aumentei a largura máxima para melhor aproveitar o espaço horizontal */
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-            transform: perspective(5000px) rotateX(10deg); /* Adiciona o efeito 3D inicial */
-            transition: opacity 1.5s ease-in-out, transform 0.5s ease-in-out; /* Adiciona transição de opacidade e transformação */
+            transform: perspective(5000px) rotateX(10deg);
+            transition: opacity 1.5s ease-in-out, transform 0.5s ease-in-out;
+            overflow-y: auto;
+            max-height: 80vh;
+            margin: auto; /* Centraliza horizontalmente o container */
         }
 
-        /* Ao carregar a página, ajusta a transformação para o efeito 3D e o fade-in */
         .sobre-mim-section.loaded {
             transform: perspective(1000px) rotateX(0deg);
             opacity: 1;
         }
 
         .sobre-mim-section h2 {
-            margin-bottom: 20px;
-            font-size: 3em;
+            margin-bottom: 10px;
+            font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
         .sobre-mim-section p {
-            font-size: 2em;
+            font-size: 1.5em;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
 
-        /* Estilos para os ícones Font Awesome */
-        .icon {
-            font-family: 'Font Awesome 5 Free'; /* Uso da fonte Font Awesome para os ícones */
-            font-weight: 900;
-        }
-
-        /* Estilos do rodapé */
         footer {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(38, 38, 38, 0.5);
-            padding: 20px;
+            background: rgba(38, 38, 38, 0.5);
+            padding: 10px;
             box-sizing: border-box;
             text-align: center;
         }
     </style>
 
-    <!-- Script para adicionar a classe "loaded" à seção "Sobre Mim" após o carregamento ou exibição da página -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.sobre-mim-section').classList.add('loaded');
@@ -107,7 +95,6 @@
 
         window.addEventListener('pageshow', function (event) {
             if (event.persisted) {
-                // Página foi restaurada do cache de volta
                 document.querySelector('.sobre-mim-section').classList.add('loaded');
             }
         });
@@ -126,8 +113,8 @@
     <!-- Seção: Sobre Mim -->
     <section class="sobre-mim-section">
         <h2>Sobre Mim</h2>
-        <p>Olá! Meu nome é [Seu Nome] e sou um(a) [sua profissão ou interesse]. Adoro [suas paixões ou interesses] e estou sempre em busca de novas experiências e aprendizados.</p>
-        <p>Este site é um espaço onde compartilho um pouco do meu trabalho e jornada. Fique à vontade para explorar e entrar em contato!</p>
+        <p>Olá, sou Mattheus Moraes, um profissional de 28 anos com experiência em diversos nichos, desde a criatividade no e-commerce até a edição para programas de televisão. Comprometo-me a transformar ideias em realidade, elevando vídeos simples a edições completas e impactantes, mantendo um padrão acolhedor e profissional. Neste espaço, convido você a explorar meu portfólio, buscando uma abordagem única e memorável na edição de vídeo. Entre em contato para discutirmos como posso contribuir para o sucesso do seu projeto.</p>
+        <p>Fique à vontade para navegar pelo site, e estou disponível para esclarecer dúvidas ou receber sugestões. Acredito que juntos podemos criar algo extraordinário, superando suas expectativas.</p>
     </section>
 
     <!-- Rodapé -->
